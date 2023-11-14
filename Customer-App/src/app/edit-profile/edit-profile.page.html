@@ -1,0 +1,65 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title color="light">Edit Profile</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button color="light"></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <br>
+  <div class="form-group">
+
+    <ion-card>
+      <ion-card-header>
+        <ion-card-title> Profile Image </ion-card-title>
+      </ion-card-header>
+      <ion-item>
+        <ion-thumbnail slot="start">
+          <img alt="Silhouette of a person's head" src="../../assets/main/person.jpg"
+            style="border-radius: 40px; height: 100%; width: 100%;" />
+        </ion-thumbnail>
+        <ion-text> Upload Image </ion-text>
+        <ion-button color="success" fill="clear" slot="end">
+          <ion-icon color="success" slot="icon-only" name="cloud-upload" ></ion-icon>
+        </ion-button>
+      </ion-item>
+    </ion-card>
+
+    <ion-card>
+      <ion-card-header>
+        <ion-card-title> Full Name </ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        <ion-input color="success" placeholder="Enter Full Name" value="Debasish Mishra"></ion-input>
+      </ion-card-content>
+    </ion-card>
+
+    <ion-card>
+      <ion-card-header>
+        <ion-card-title> Mobile Number </ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        <ion-input color="success" type="tel" placeholder="Enter Mobile Number" value="+91 6372487946"></ion-input>
+      </ion-card-content>
+    </ion-card>
+
+    <ion-card>
+      <ion-card-header>
+        <ion-card-title> Email Address </ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        <ion-input color="success" type="email" placeholder="Enter Email Address" value="debasish07@gmail.com"></ion-input>
+      </ion-card-content>
+    </ion-card>
+
+  </div>
+</ion-content>
+
+<ion-footer>
+  <ion-button color="success" expand="block" id="open-toast" style="margin: 20px;"> Save </ion-button>
+  <ion-toast position="top" color="primary" trigger="open-toast" message="Profile Updated Successfully."
+    [duration]="3000" icon="checkmark-circle">
+  </ion-toast>
+</ion-footer>

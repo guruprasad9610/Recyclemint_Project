@@ -1,0 +1,20 @@
+:root {
+
+  /*put at the bottom after all other base styles*/
+  --ion-tab-bar-color-selected: limegreen;
+  --ion-toolbar-background: green !important; ;
+--ion-toolbar-color: green !important;
+}
+
+ion-toolbar {
+  --background: green !important;
+}
+
+
+.no-scroll .scroll-content{
+  overflow: hidden;
+}
+
+.scroll-content {
+  overflow-y: auto !important;
+}

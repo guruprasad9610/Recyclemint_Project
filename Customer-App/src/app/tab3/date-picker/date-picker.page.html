@@ -1,0 +1,45 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title color="light"> Sell Scrap </ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button color="light"></ion-back-button>
+    </ion-buttons>
+    <ion-button fill="clear" slot="end">
+      <ion-icon name="notifications" color="light" slot="icon-only"></ion-icon>
+    </ion-button>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-row style="margin-top:4vh;margin-right:13vh">
+    <ion-col size="6">
+      <ion-row style="justify-content: end;font-size: 5vh;">
+        <ion-icon name="calendar-outline"></ion-icon>
+      </ion-row>
+    </ion-col>
+    <ion-col size="6">
+      <ion-row style="font-size: 2.5vh;
+        font-weight: bold;
+
+        margin-top: 1vh;">Select Date</ion-row>
+    </ion-col>
+
+  </ion-row>
+
+  <ion-row class="formatted-date" (click)="showCalender()" class="custom-item">
+    <ion-label>{{ selectedDate ? (selectedDate | date: 'MM/dd/yyyy') : 'DD/MM/YYYY' }}</ion-label>
+  </ion-row>
+
+
+
+
+  <ion-row class="date-input">
+    <ion-datetime displayFormat="MM/DD/YYYY" pickerFormat="MM/DD/YYYY" *ngIf="Calender" [(ngModel)]="selectedDate"
+      dayValues={{slots}} (ionChange)="updateDayValues($event)" presentation="date"></ion-datetime>
+  </ion-row>
+
+
+  <ion-row style="justify-content: center; margin-top:58vh">
+    <ion-button color="success" expand="full" (click)="goToadress()">continue</ion-button>
+  </ion-row>
+</ion-content>

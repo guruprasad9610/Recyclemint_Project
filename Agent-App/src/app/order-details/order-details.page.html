@@ -1,0 +1,91 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title color="light"> Order Details </ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button color="light"></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <!-- <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">OrderDetails</ion-title>
+    </ion-toolbar>
+  </ion-header> -->
+
+  <!-- STATUS BAR -->
+
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Order Status</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-progress-bar [buffer]="buffer" [value]="progress" style="margin-bottom: 10px;"></ion-progress-bar>
+      <ion-text color="primary">Status : Out for Pickup</ion-text>
+    </ion-card-content>
+  </ion-card>
+
+  <!-- ORDER DETAILS -->
+
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Order ID : 1234567890 </ion-card-title>
+    </ion-card-header>
+
+    <ion-card-content>
+      <ion-card-subtitle>Pickup Date: <b> 20/08/2023 </b> </ion-card-subtitle>
+      <ion-card-subtitle>Pickup Time: <b> 10:30 AM </b> </ion-card-subtitle>
+    </ion-card-content>
+  </ion-card>
+
+  <!-- ITEM LIST -->
+
+  <div class="container">
+  <h5>List of items</h5>
+
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">Sl</th>
+          <th scope="col">Scrap Item</th>
+          <th scope="col">Qnt.(kg)</th>
+          <th scope="col"> Price(Rs.)</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th scope="row">1</th>
+          <td><ion-input fill="solid" value="Paper"></ion-input></td>
+          <td><ion-input fill="solid" value="4"></ion-input></td>
+          <td><ion-input fill="solid" value="40"></ion-input></td>
+        </tr>
+        <tr>
+          <th scope="row">2</th>
+          <td><ion-input fill="solid" value="Iron"></ion-input></td>
+          <td><ion-input fill="solid" value="10"></ion-input></td>
+          <td><ion-input fill="solid" value="400"></ion-input></td>
+        </tr>
+        <tr>
+          <th scope="row">3</th>
+          <td><ion-input fill="solid" value="Plastic"></ion-input></td>
+          <td><ion-input fill="solid" value="5"></ion-input></td>
+          <td><ion-input fill="solid" value="100"></ion-input></td>
+        </tr>
+        <tr>
+          <th scope="row" colspan="3"> Total Amount : </th>
+          <td><ion-input fill="solid" value="540"></ion-input></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <ion-button color="success" expand="block" style="margin: 20px;" id="present-alert"> Confirm Order </ion-button>
+  <ion-alert
+    trigger="present-alert"
+    header="Send Order Confirmation Request"
+    [buttons]="alertButtons"
+    (didDismiss)="setResult($event)"
+  ></ion-alert>
+
+</ion-content>

@@ -1,0 +1,306 @@
+{
+	"info": {
+		"_postman_id": "369e1d09-c09a-4c4e-88cc-f592406923ec",
+		"name": "recycleMint",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "16507359"
+	},
+	"item": [
+		{
+			"name": "create order by customer",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"customer_id\": \"650d1e10c75466a52c316392\", \r\n    \"address_id\": \"650d223360af571a2be73900\", \r\n    \"item\": [{\"itemid\": \"65151f2a8e68d4e596998f7f\", \"weight\": \"2\"}, {\"itemid\": \"6515440fc9097373628e4854\", \"weight\": \"5\"}], \r\n    \"schedule_date\": \"30-09-2023\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/orders/createOrder",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"orders",
+						"createOrder"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "customer order history",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/api/orders/historder/651568a42957ad172df9c135",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"orders",
+						"historder",
+						"651568a42957ad172df9c135"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "individual order history",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/api/orders/indhistorder/65155e61132d526a4eb79d52",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"orders",
+						"indhistorder",
+						"65155e61132d526a4eb79d52"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create/update slot",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"month\": \"oct\",\r\n    \"year\": \"2023\",\r\n    \"date\": [\"02-10-2023\", \"05-10-2023\"]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/slot/createSlot",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"slot",
+						"createSlot"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get All Slot",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/api/slot/allSlot",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"slot",
+						"allSlot"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Admin Order History",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/api/orders/historder/650bdeb49d0d4331b0da71b3",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"orders",
+						"historder",
+						"650bdeb49d0d4331b0da71b3"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "filter by order status, view by agent",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "jkjjnnk",
+						"value": "hjbh",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"url": {
+					"raw": "http://localhost:3000/api/orders/filtorder/6512a30102256827e2cd881b?filter=03-10-2023&order=future",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"orders",
+						"filtorder",
+						"6512a30102256827e2cd881b"
+					],
+					"query": [
+						{
+							"key": "filter",
+							"value": "03-10-2023"
+						},
+						{
+							"key": "order",
+							"value": "future"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Assign order to Agent by Admin",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"agentid\": \"6512a30102256827e2cd881b\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/orders/assorder/65155e61132d526a4eb79d52",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"orders",
+						"assorder",
+						"65155e61132d526a4eb79d52"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Pick up confirm by Agent",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/api/orders/coforderbyagent/6512a30102256827e2cd881b?orderid=65155e61132d526a4eb79d52&status=-3",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"orders",
+						"coforderbyagent",
+						"6512a30102256827e2cd881b"
+					],
+					"query": [
+						{
+							"key": "filter",
+							"value": "03-10-2023",
+							"disabled": true
+						},
+						{
+							"key": "orderid",
+							"value": "65155e61132d526a4eb79d52"
+						},
+						{
+							"key": "status",
+							"value": "4",
+							"disabled": true
+						},
+						{
+							"key": "status",
+							"value": "-3"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Payment status update by Agent",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/api/orders/payconfbyagent/6512a30102256827e2cd881b?orderid=65155e61132d526a4eb79d52&status=5",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"orders",
+						"payconfbyagent",
+						"6512a30102256827e2cd881b"
+					],
+					"query": [
+						{
+							"key": "orderid",
+							"value": "65155e61132d526a4eb79d52"
+						},
+						{
+							"key": "status",
+							"value": "5"
+						},
+						{
+							"key": "status",
+							"value": "-3",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

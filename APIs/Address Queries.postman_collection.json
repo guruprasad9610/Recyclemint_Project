@@ -1,0 +1,114 @@
+{
+	"info": {
+		"_postman_id": "d90c7388-1e54-4477-b7a8-13e76803b1f1",
+		"name": "Address Queries",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "29644274"
+	},
+	"item": [
+		{
+			"name": "Add new Address",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"location\":\"Rasulgarh\",\r\n        \"landmark\": \"Esplanade\",\r\n        \"city\": \"BBSR\",\r\n        \"state\": \"Odisha\",\r\n        \"PIN\": \"751016\",\r\n        \"latitude\": \"234.75\",\r\n        \"longitude\": \"876.55\",\r\n        \"customer_Id\": \"650d1e10c75466a52c316392\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/api/address/create",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"address",
+						"create"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Address By ID",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5000/api/address/650d223360af571a2be73900",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"address",
+						"650d223360af571a2be73900"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Address By CustomerID",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5000/api/address/cusId/650d1e10c75466a52c316392",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"address",
+						"cusId",
+						"650d1e10c75466a52c316392"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Address",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/api/address/delete/65151dab049b601484601598",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"address",
+						"delete",
+						"65151dab049b601484601598"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

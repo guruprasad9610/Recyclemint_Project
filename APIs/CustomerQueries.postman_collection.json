@@ -1,0 +1,149 @@
+{
+	"info": {
+		"_postman_id": "2ba7fe3a-76a2-42a7-b887-c7271f139919",
+		"name": "CustomerQueries",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "29644274"
+	},
+	"item": [
+		{
+			"name": "Customer SignUp/Login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"mobile\":\"91200567890\",\r\n    \"OTP\":\"9460\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/api/customers/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"customers",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Customer By Mobile",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5000/api/customers/8276528210",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"customers",
+						"8276528210"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get All Customers Details",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5000/api/customers",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"customers"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create / Update Profile of customer",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "mobile",
+							"value": "91200567890",
+							"type": "text"
+						},
+						{
+							"key": "name",
+							"value": "Ranjan",
+							"type": "text"
+						},
+						{
+							"key": "email",
+							"value": "ranjan@123",
+							"type": "text"
+						},
+						{
+							"key": "image",
+							"type": "file",
+							"src": "/C:/Users/aashk/Pictures/BTS/V.jpg"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:5000/api/customers/updateProfile",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"customers",
+						"updateProfile"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete customer",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5000/api/customers/delete/6513fadcb8ef3a91f5f11094",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"customers",
+						"delete",
+						"6513fadcb8ef3a91f5f11094"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

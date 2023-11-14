@@ -1,0 +1,47 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title color="light">Add Address</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button color="light"></ion-back-button>
+    </ion-buttons>
+    <ion-button fill="clear" slot="end" >
+      <ion-icon name="notifications" color="light" slot="icon-only"></ion-icon>
+    </ion-button>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <form (ngSubmit)="onSubmit()" style="padding:3vh;padding-top:0vh">
+    <ion-item lines="none">
+      <ion-label position="floating"  class="custom-label" class="custom-item">House: </ion-label>
+      <ion-input [(ngModel)]="fullName" name="fullName" required class="custom-input"  aria-label="name"></ion-input>
+    </ion-item>
+
+    <ion-item  lines="none">
+      <ion-label position="floating"  class="custom-label" class="custom-item">Landmark:</ion-label>
+      <ion-input [(ngModel)]="streetAddress" name="streetAddress" required class="custom-input" aria-label="Email"></ion-input>
+    </ion-item>
+
+    <ion-item  lines="none">
+      <ion-label position="floating" class="custom-label" class="custom-item">City:</ion-label>
+      <ion-input [(ngModel)]="city" name="city" required class="custom-input" aria-label="Email"></ion-input>
+    </ion-item>
+
+    <ion-item  lines="none">
+      <ion-label position="floating" class="custom-label" class="custom-item">District:</ion-label>
+      <ion-input [(ngModel)]="state" name="state" required class="custom-input" aria-label="Email"></ion-input>
+    </ion-item>
+
+    <ion-item  lines="none">
+      <ion-label position="floating" class="custom-label" class="custom-item">PIN:</ion-label>
+      <ion-input [(ngModel)]="postalCode" name="postalCode" required class="custom-input" aria-label="Email"></ion-input>
+    </ion-item>
+
+    <ion-button expand="full" type="submit" color="success" style="padding:2vh ; margin-left:5vh;margin-right:5vh">Save</ion-button>
+  </form>
+</ion-content>
+
+
+
+
+

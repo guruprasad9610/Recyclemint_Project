@@ -1,0 +1,82 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title color="light"> Order Details </ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button color="light"></ion-back-button>
+    </ion-buttons>
+    <ion-button fill="clear" slot="end">
+      <ion-icon name="notifications" color="light" slot="icon-only"></ion-icon>
+    </ion-button>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <!-- <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">orderDetails</ion-title>
+    </ion-toolbar>
+  </ion-header> -->
+
+    <ion-card>
+      <ion-card-header>
+        <ion-card-title>Order Status</ion-card-title>
+      </ion-card-header>
+      <ion-card-content >
+        <ion-progress-bar [buffer]="buffer" [value]="progress" style="margin-bottom: 10px;"></ion-progress-bar>
+        <ion-text color="primary">Status : Out for Pickup</ion-text>
+      </ion-card-content>
+    </ion-card>
+
+    <ion-card>
+
+      <ion-card-header>
+        <ion-card-title>Order ID : {{orderDetails.order_id}} </ion-card-title>
+      </ion-card-header>
+
+      <ion-card-content>
+        <ion-card-subtitle>
+          <ion-row>
+            Pickup Date: <b> {{orderDetails.schedule_date}} </b>
+          </ion-row>
+          <ion-row>
+            {{address?.city}}, {{address?.location}}, {{address?.pin}}
+          </ion-row>
+         </ion-card-subtitle>
+        <!-- <ion-card-subtitle>Pickup Time: <b> 10:30 AM </b> </ion-card-subtitle> <br> -->
+
+        <br>
+
+        <ion-card-title> List of items </ion-card-title>
+
+          <ion-item lines="none">
+            <table class="table table-striped-columns">
+              <thead>
+                <tr>
+                  <th scope="col"> Sl </th>
+                  <th scope="col"> Item </th>
+                  <th scope="col"> Quantity </th>
+                  <!-- <th scope="col"> Weight </th> -->
+
+                  <th scope="col"> Price </th>
+                </tr>
+              </thead>
+              <tbody *ngIf="itemDetails.length > 0">
+                <tr *ngFor="let item of itemDetails[0];index as i">
+                  <th scope="row">{{i+1}}</th>
+                  <td>{{item?.item_name}}</td>
+                  <td>{{item?.weight}}kg</td>
+                  <td>₹ {{item?.price * item.weight}}/-</td>
+                </tr>
+
+                <tr>
+                  <th scope="row" colspan="3"> Total Amount : </th>
+                  <td>₹ {{total}}/-</td>
+                </tr>
+              </tbody>
+            </table>
+          </ion-item>
+
+      </ion-card-content>
+    </ion-card>
+
+</ion-content>

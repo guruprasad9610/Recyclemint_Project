@@ -1,0 +1,304 @@
+{
+	"info": {
+		"_postman_id": "2339d7c9-72e2-4549-8277-67cd1fcdefea",
+		"name": "UsersQueries",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "29644274"
+	},
+	"item": [
+		{
+			"name": "Internal Login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\":\"dfg@123\",\r\n    \"password\":\"1734\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/api/users/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"users",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get particular user details by Id",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/api/users/650bdeb49d0d4331b0da71b3",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"users",
+						"650bdeb49d0d4331b0da71b3"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create new User",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "name",
+							"value": "Rohan Scrap Traders",
+							"type": "text"
+						},
+						{
+							"key": "email",
+							"value": "rohanscrap@123",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "1234",
+							"type": "text"
+						},
+						{
+							"key": "usertype",
+							"value": "dealer",
+							"type": "text"
+						},
+						{
+							"key": "mobile",
+							"value": "9543214567",
+							"type": "text"
+						},
+						{
+							"key": "imgFile",
+							"type": "file",
+							"src": "/C:/Users/aashk/Pictures/BTS/V.jpg"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:5000/api/users/create",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"users",
+						"create"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get all users details (excluding Admin)",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/api/users/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"users",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get all users details by usertype query",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/api/users?utype=dealer",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"users"
+					],
+					"query": [
+						{
+							"key": "utype",
+							"value": "dealer"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Admin Details by id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5000/api/users/650bdeb49d0d4331b0da71b3",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"users",
+						"650bdeb49d0d4331b0da71b3"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Users by id",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "_id",
+							"value": "650ad6eb76e7aa3eec96a02f",
+							"type": "text"
+						},
+						{
+							"key": "name",
+							"value": "Suman",
+							"type": "text"
+						},
+						{
+							"key": "email",
+							"value": "suman@123",
+							"type": "text"
+						},
+						{
+							"key": "image",
+							"type": "file",
+							"src": "/C:/Users/aashk/Pictures/BTS/tae.jpg"
+						},
+						{
+							"key": "mobile",
+							"value": "8987651234",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "sumantae",
+							"type": "text"
+						},
+						{
+							"key": "usertype",
+							"value": "agent",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:5000/api/users/updateUsers",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"users",
+						"updateUsers"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete user by ID",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5000/api/users/delete/650ad6eb76e7aa3eec96a02f",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"users",
+						"delete",
+						"650ad6eb76e7aa3eec96a02f"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

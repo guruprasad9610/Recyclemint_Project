@@ -1,0 +1,23 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <h1 class="text-center" id="heading">User Login</h1>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+
+  <div class="container form-group">
+    <ion-input  label="Enter Mobile Number (Required)*" [(ngModel)]="userMobileNum.phone" name="phone" maxlength="10" minlength="10"
+      color="success" label-placement="floating" fill="outline" type="tel" placeholder="888-888-8888" required>
+    </ion-input>
+
+    <h6 class="text-center">We will recognize existing customer.</h6>
+  </div>
+
+</ion-content>
+
+<ion-footer>
+  <ion-button color="success" expand="block" id="open-toast" (click)="onSubmit()"> Send OTP </ion-button>
+  <ion-toast position="top" color="primary" trigger="open-toast" message="OTP sent to your mobile number."
+  [duration]="3000" icon="checkmark-circle"></ion-toast>
+</ion-footer>

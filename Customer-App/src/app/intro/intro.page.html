@@ -1,0 +1,20 @@
+<ion-content [fullscreen]="true">
+
+  <div class="container">
+    <img src="../../assets/main/V_Recycle-Mint-Logo.png" alt="logo"
+    style="height: 50%; width: 70%;" class="img-fluid">
+  </div>
+
+</ion-content>
+
+<ion-footer>
+
+  <ion-button id="present-alert" color="success" expand="block"> Get Started </ion-button>
+  <ion-alert
+    trigger="present-alert"
+    header="Allow Location permission to access your location"
+    [buttons]="alertButtons"
+    (didDismiss)="setResult($event)">
+  </ion-alert>
+
+</ion-footer>

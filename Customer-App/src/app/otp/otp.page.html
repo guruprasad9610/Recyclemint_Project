@@ -1,0 +1,27 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <h1 class="text-center" id="heading">Enter OTP</h1>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+
+  <div class="container">
+    <ng-otp-input  (onInputChange)="onOtpChange($event)"  [config]="config">
+    </ng-otp-input>
+  </div>
+
+  <h6 class="text-center">We have sent OTP to your mobile number</h6>
+
+  <div class="container text-center">
+    <ion-button fill="clear" id="open-toast"> Resend OTP </ion-button>
+    <ion-toast position="top" color="primary" trigger="open-toast" message="OTP sent again to your mobile number."
+    [duration]="3000" icon="checkmark-circle"></ion-toast>
+  </div>
+
+</ion-content>
+
+<ion-footer>
+  <ion-button color="success" expand="block" style="margin: 20px;" id="open-toaster" (click)="onLogin()" [disabled]="!submitBtn"> Submit </ion-button>
+
+</ion-footer>

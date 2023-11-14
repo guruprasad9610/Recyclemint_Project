@@ -1,0 +1,168 @@
+<!-- ANDROID HEADER TOOLBAR -->
+
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title color="light"> My Orders </ion-title>
+    <ion-button fill="clear" slot="end" (click)="onNotice()">
+      <ion-icon name="notifications" color="light" slot="icon-only"></ion-icon>
+    </ion-button>
+  </ion-toolbar>
+</ion-header>
+
+<!-- IOS HEADER TOOLBAR -->
+
+<ion-content [fullscreen]="true">
+  <!-- <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">My Orders</ion-title>
+      <ion-button slot="end" color="dark" shape="round" href="/notifications">
+      <ion-icon name="notifications" slot="icon-only" color="success"></ion-icon>
+    </ion-button>
+    </ion-toolbar>
+  </ion-header> -->
+
+  <!-- ORDER DETAILS CARDS -->
+
+  <ion-card style="border-radius: 10px;" (click)="onDetails(item)" *ngFor="let item of pickupDetails">
+    <ion-item lines="none">
+      <i class="fa-solid fa-truck-fast fa-lg" slot="start" style="color: var(--ion-color-warning);"></i>
+      <div *ngIf="item.status == 0">
+        <ion-label color="warning"> Create </ion-label>
+        <!-- <ion-icon name="caret-forward" slot="end" color="warning"></ion-icon> -->
+      </div>
+      <div *ngIf="item.status == 2">
+        <ion-label color="warning"> Assign To Agent </ion-label>
+        <!-- <ion-icon name="caret-forward" slot="end" color="warning"></ion-icon> -->
+      </div>
+      <div *ngIf="item.status == -3">
+        <ion-label color="warning"> Payment Failed</ion-label>
+        <!-- <ion-icon name="caret-forward" slot="end" color="warning"></ion-icon> -->
+      </div>
+      <div *ngIf="item.status == 1">
+        <ion-label color="warning"> Placed</ion-label>
+        <!-- <ion-icon name="caret-forward" slot="end" color="warning"></ion-icon> -->
+      </div>
+      <div *ngIf="item.status == 3">
+        <ion-label color="warning"> Out For Pickup</ion-label>
+        <!-- <ion-icon name="caret-forward" slot="end" color="warning"></ion-icon> -->
+      </div>
+      <div *ngIf="item.status == 4">
+        <ion-label color="warning"> Receieve By Agent</ion-label>
+        <!-- <ion-icon name="caret-forward" slot="end" color="warning"></ion-icon> -->
+      </div>
+      <div *ngIf="item.status == 5">
+        <ion-label color="warning"> Payment Successful</ion-label>
+        <!-- <ion-icon name="caret-forward" slot="end" color="warning"></ion-icon> -->
+      </div>
+
+    </ion-item>
+
+    <ion-card-header>
+      <ion-card-subtitle>Order Date: {{item.schedule_date}}</ion-card-subtitle>
+      <ion-card-title> Order ID: {{item.order_id}} </ion-card-title>
+    </ion-card-header>
+
+    <ion-card-content>
+
+      <ion-row>
+        <ion-col size="2">
+           Items:
+          </ion-col>
+        <ion-col *ngFor="let item of item.itemDetails[0]; let last = last" class="newspaper1">
+        {{ item.item_name }}{{ !last ? ',' : '' }}
+        </ion-col>
+        </ion-row>
+    </ion-card-content>
+  </ion-card>
+
+  <!-- OUT FOR PICKUP CARD -->
+  <!-- <ion-card style="border-radius: 10px;" (click)="onDetails()">
+  <ion-item>
+    <i class="fa-solid fa-truck-fast fa-lg" slot="start" style="color: var(--ion-color-warning);"></i>
+    <ion-label color="warning"> Out for pickup </ion-label>
+    <ion-icon name="caret-forward" slot="end" color="warning"></ion-icon>
+  </ion-item>
+
+  <ion-card-header>
+    <ion-card-subtitle>Order Date: 12/08/2023</ion-card-subtitle>
+    <ion-card-title> Order ID: 1234567890 </ion-card-title>
+  </ion-card-header>
+
+  <ion-card-content>
+    <b>Items : </b> Aluminium, Plastic Bottles, Iron, Newspapers
+  </ion-card-content>
+</ion-card> -->
+
+  <!-- PICKUP CONFIRMED CARD -->
+  <!-- <ion-card style="border-radius: 10px;" (click)="onDetails()">
+  <ion-item>
+    <ion-icon name="checkmark-circle" slot="start" color="primary"></ion-icon>
+    <ion-label color="primary"> Pickup Confirmed </ion-label>
+    <ion-icon name="caret-forward" slot="end" color="primary"></ion-icon>
+  </ion-item>
+
+  <ion-card-header>
+    <ion-card-subtitle>Order Date: 10/09/2023</ion-card-subtitle>
+    <ion-card-title> Order ID: 1234567890 </ion-card-title>
+  </ion-card-header>
+
+  <ion-card-content>
+    <b>Items : </b> Aluminium, Plastic Bottles, Iron, Newspapers
+  </ion-card-content>
+</ion-card> -->
+
+  <!-- PICKUP SCHEDULED CARD -->
+  <!-- <ion-card style="border-radius: 10px;" (click)="onDetails()">
+  <ion-item>
+    <ion-icon name="calendar" slot="start"></ion-icon>
+    <ion-label color="dark"> Pickup Scheduled </ion-label>
+    <ion-icon name="caret-forward" slot="end"></ion-icon>
+  </ion-item>
+
+  <ion-card-header>
+    <ion-card-subtitle>Order Date: 10/09/2023</ion-card-subtitle>
+    <ion-card-title> Order ID: 1234567890 </ion-card-title>
+  </ion-card-header>
+
+  <ion-card-content>
+    <b>Items : </b> Aluminium, Plastic Bottles, Iron, Newspapers
+  </ion-card-content>
+</ion-card> -->
+
+  <!-- PICKUP COMPLETED CARD -->
+  <!-- <ion-card style="border-radius: 10px;" (click)="onDetails()">
+  <ion-item>
+    <ion-icon name="bag-check" slot="start" color="success"></ion-icon>
+    <ion-label color="success"> Pickup Completed </ion-label>
+    <ion-icon name="caret-forward" slot="end" color="success"></ion-icon>
+  </ion-item>
+
+  <ion-card-header>
+    <ion-card-subtitle>Order Date: 10/09/2023</ion-card-subtitle>
+    <ion-card-title> Order ID: 1234567890 </ion-card-title>
+  </ion-card-header>
+
+  <ion-card-content>
+    <b>Items : </b> Aluminium, Plastic Bottles, Iron, Newspapers
+  </ion-card-content>
+</ion-card> -->
+
+  <!-- PICKUP CANCELLED CARD -->
+  <!-- <ion-card style="border-radius: 10px;" (click)="onDetails()">
+  <ion-item>
+    <ion-icon name="close-circle" slot="start" color="danger"></ion-icon>
+    <ion-label color="danger"> Pickup Cancelled </ion-label>
+    <ion-icon name="caret-forward" slot="end" color="danger"></ion-icon>
+  </ion-item>
+
+  <ion-card-header>
+    <ion-card-subtitle>Order Date: 10/09/2023</ion-card-subtitle>
+    <ion-card-title> Order ID: 1234567890 </ion-card-title>
+  </ion-card-header>
+
+  <ion-card-content>
+    <b>Items : </b> Aluminium, Plastic Bottles, Iron, Newspapers
+  </ion-card-content>
+</ion-card> -->
+
+</ion-content>

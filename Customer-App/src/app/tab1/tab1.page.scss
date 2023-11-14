@@ -1,0 +1,77 @@
+.container {
+  margin: auto;
+}
+
+.scrap-card {
+  height: auto;
+  width: auto;
+  text-align: center;
+  padding: 2%;
+
+  img {
+    height: 80px;
+    width: 80px;
+    border-radius: 6px;
+  }
+
+  ion-card-title {
+    font-size: 16px;
+  }
+}
+
+
+  // ion-row{
+  //   ion-col{
+  //     padding: 0 !important;
+  //     ion-card {
+  //       // border: 0.001vh solid var(--ion-color-medium);
+  //       border-radius: 14px;
+  //       height: 100%;
+  //       width: 90%;
+  //       margin: 0 !important;
+  //       padding: 0 important;
+  //       display: flex;
+  //       flex-direction: column;
+  //       align-items: center;
+  //       justify-content: center;
+  //       ion-card-subtitle {
+  //         font-weight: 400;
+  //         margin-top: 6%;
+  //       }
+  //       ion-thumbnail{
+  //         height: 60%;
+  //         width: 80%;
+  //         img{
+  //           margin-top: 6%;
+  //           border-radius: 10px;
+  //         }
+  //       }
+  //     }
+  //   }
+  // }
+
+
+  .scrap-price-list{
+    height: 220px;
+    width:100%;
+    margin: 6px;
+    ion-content{
+        scrollbar-width: none;
+        div{
+            display: inline-flex;
+        }
+    }
+}
+.scrap-card{
+    height: auto;
+    width: 126px;
+    text-align: center;
+    padding: 10px;
+    img{
+        height: 100px;
+        width: 100px;
+    }
+    ion-card-title{
+        font-size: 16px;
+    }
+}

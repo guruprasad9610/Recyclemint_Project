@@ -1,0 +1,59 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title color="light"> Notifications </ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button color="light"></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <!-- <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Notifications</ion-title>
+    </ion-toolbar>
+  </ion-header> -->
+
+  <!-- NOTIFICATION MESSAGES -->
+
+  <br>
+
+  <ion-item button detail="true">
+    <i class="fa-solid fa-truck-fast fa-lg" slot="start" style="color: var(--ion-color-warning);"></i>
+    <ion-label color="warning">
+      <h2> Out for Pickup </h2>
+      <p>Detail set to true - detail arrow displays on both modes</p>
+    </ion-label>
+  </ion-item>
+
+  <br>
+
+  <ion-item button detail="true">
+    <ion-icon name="checkmark-circle" color="primary" slot="start"></ion-icon>
+    <ion-label color="primary">
+      <h2> Pickup Confirmed </h2>
+      <p>Detail set to true - detail arrow displays on both modes</p>
+    </ion-label>
+  </ion-item>
+
+  <br>
+
+  <ion-item button detail="true">
+    <ion-icon name="bag-check" color="success" slot="start"></ion-icon>
+    <ion-label color="success">
+      <h2> Pickup Completed </h2>
+      <p>Detail set to true - detail arrow displays on both modes</p>
+    </ion-label>
+  </ion-item>
+
+  <br>
+
+  <ion-item button detail="true">
+    <ion-icon name="close-circle" color="danger" slot="start"></ion-icon>
+    <ion-label color="danger">
+      <h2> Pickup Cancelled </h2>
+      <p>Detail set to true - detail arrow displays on both modes</p>
+    </ion-label>
+  </ion-item>
+
+</ion-content>

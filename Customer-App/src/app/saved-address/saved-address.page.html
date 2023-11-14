@@ -1,0 +1,37 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title color="light">Saved Address</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button color="light"></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+<br>
+  <ion-card style="height: 26%;">
+    <ion-item>
+      <ion-card-title> Debasish Mishra </ion-card-title>
+      <ion-button color="success" fill="clear" slot="end">
+        <ion-icon color="success" slot="icon-only" name="create" ></ion-icon>
+      </ion-button>
+    </ion-item>
+    <ion-item>
+      <ion-text>
+        <b>Plot No.:</b> 169/106, Tripathi Bhavan <br>
+        <b>Area Name:</b> Behera Sahi, Nayapalli <br>
+        <b>City:</b> Bhubaneswar <br>
+        <b>State:</b> Odisha <br>
+        <b>PIN:</b> 751012
+      </ion-text>
+      <ion-button color="danger" fill="clear" slot="end">
+        <ion-icon color="danger" slot="icon-only" name="trash" ></ion-icon>
+      </ion-button>
+    </ion-item>
+  </ion-card>
+
+</ion-content>
+
+<ion-footer>
+  <ion-button color="success" expand="block" style="margin: 20px;" (click)="onAddNew()"> Add New Address </ion-button>
+</ion-footer>

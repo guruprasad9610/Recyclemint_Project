@@ -1,0 +1,71 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title color="light"> Schedule Pickup </ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button color="light"></ion-back-button>
+    </ion-buttons>
+    <ion-button fill="clear" slot="end" >
+      <ion-icon name="notifications" color="light" slot="icon-only"></ion-icon>
+    </ion-button>
+  </ion-toolbar>
+ </ion-header>
+
+<ion-content >
+<ion-row  style="margin-top:4vh;margin-right:6vh">
+  <ion-col size="4" >
+    <ion-row style="justify-content: end;font-size: 5vh;">
+      <ion-icon name="home-outline"></ion-icon>
+    </ion-row>
+  </ion-col>
+  <ion-col size="7">
+    <ion-row style="font-size: 2.5vh;
+    font-weight: bold;
+
+    margin-top: 1vh;">Pickup Address</ion-row>
+  </ion-col>
+
+</ion-row>
+
+<ion-row>
+  <ion-card style="width:100%">
+    <ion-row>
+      <ion-col>House:</ion-col>
+      <ion-col>Tripathy Bhavan</ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>Landmark:</ion-col>
+      <ion-col></ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>City:</ion-col>
+      <ion-col></ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>District:</ion-col>
+      <ion-col></ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>PIN:</ion-col>
+      <ion-col></ion-col>
+    </ion-row>
+
+    <ion-row class="icon-row">
+      <ion-col size="1">
+        <ion-icon name="trash" style="color:red;font-size:3vh"></ion-icon>
+      </ion-col>
+      <ion-col size="1">
+        <ion-icon name="create" style="color:rgb(45 211 111);font-size:3vh"></ion-icon>
+      </ion-col>
+
+    </ion-row>
+  </ion-card>
+</ion-row>
+
+<ion-row style="justify-content:center;margin-top:10vh;">
+  <ion-button color="success" expand="full" (click)="gotoadd()">Add new address</ion-button>
+</ion-row>
+
+<ion-row style="justify-content:center;margin-top:24vh;position:sticky">
+  <ion-button color="success" expand="full" (click)="gotoNext()">continue</ion-button>
+</ion-row>
+</ion-content>

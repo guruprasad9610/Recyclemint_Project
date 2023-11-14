@@ -1,0 +1,31 @@
+.icon-calender{
+    font-size: 24px; /* Adjust the font size to your preference */
+  color: red;
+
+}
+
+
+
+.date-input ion-datetime{
+    border: 1px solid #ccc; /* Border color */
+    border-radius: 8px; /* Border radius */
+    padding: 10px; /* Optional: Adjust padding as needed */
+    margin-top:12px;
+}
+
+.custom-item {
+  border: 1px solid black; /* Green border color */
+  display: flex;
+  justify-content: center;
+}
+
+.custom-item ion-row {
+  width: 100%;
+  border: 1px solid black; /* Green border color */
+  display: flex;
+  justify-content: center; /* Ensure row takes the full width */
+}
+
+.custom-item ion-label {
+  text-align: center; /* Center the label text */
+}

@@ -1,0 +1,97 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title color="light">Pickup Details</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button color="light"></ion-back-button>
+    </ion-buttons>
+
+  </ion-toolbar>
+ </ion-header>
+
+
+
+ <ion-content *ngIf="!sucessPage">
+   <ion-card class="cstm-card">
+     <ion-card-header style="border-bottom: 1px solid #c6d2d9;font-weight:bold;color:black;font-size:2.5vh">
+       Pickup
+     </ion-card-header>
+
+     <ion-card-content>
+      <ion-row>
+        <ion-col>
+          Date:
+        </ion-col>
+        <ion-col>
+          12/NOV/2023
+        </ion-col>
+      </ion-row>
+       <ion-row>
+         <ion-col>
+           Weight:
+         </ion-col>
+         <ion-col>
+           46kg
+         </ion-col>
+       </ion-row>
+       <ion-row>
+         <ion-col>
+           Category:
+         </ion-col>
+
+       </ion-row>
+
+       <div>
+        <ion-row style="border-bottom:1px dotted #000">
+          <ion-col>
+            Paper:
+          </ion-col>
+          <ion-col>
+            20kg
+          </ion-col>
+          <ion-col>
+            Rs 240.00
+          </ion-col>
+        </ion-row>
+
+        <ion-row>
+          <ion-col>
+            Total:
+          </ion-col>
+          <ion-col>
+
+          </ion-col>
+          <ion-col>
+            Rs.500.00
+          </ion-col>
+        </ion-row>
+
+       </div>
+     </ion-card-content>
+   </ion-card>
+
+
+   <ion-row style="padding:10vh;margin-top:32vh">
+    <ion-button color="success" (click)="confirm()">Confirm</ion-button>
+    <ion-button color="danger">Cancel</ion-button>
+   </ion-row>
+ </ion-content>
+
+
+ <ion-content *ngIf="sucessPage">
+  <div>
+    <ion-img src="../../../assets/main/sucesspageimg2.png"></ion-img>
+
+    <ion-img src="../../../assets/main/sucesspageimg1.jpg" alt="Alt text"></ion-img>
+  </div>
+
+
+
+    <ion-row style="justify-content:center">
+      <ion-button color="success" expand="full" (click)="gotoPickup()">View Details</ion-button>
+    </ion-row>
+
+
+
+
+
+ </ion-content>

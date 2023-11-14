@@ -1,0 +1,142 @@
+<!-- ANDROID HEADER TOOLBAR -->
+
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title color="light">Recycle Mint</ion-title>
+    <ion-button fill="clear" slot="end" (click)="onNotice()">
+      <ion-icon name="notifications" color="light" slot="icon-only"></ion-icon>
+    </ion-button>
+  </ion-toolbar>
+</ion-header>
+
+<!-- IOS HEADER TOOLBAR -->
+
+<ion-content [fullscreen]="true">
+  <!-- <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Recycle Mint</ion-title>
+      <ion-button slot="end" color="dark" shape="round" href="/notifications">
+        <ion-icon name="notifications" slot="icon-only" color="success"></ion-icon>
+      </ion-button>
+    </ion-toolbar>
+  </ion-header> -->
+
+<!-- WELCOME CARD -->
+
+  <ion-card style="text-align: center; border-radius: 8px; background-color: whitesmoke;">
+    <ion-card-header>
+      <ion-card-title color="dark"> Welcome to </ion-card-title>
+        <img src="../../assets/main/H_Recycle-Mint-Logo.png"
+        class="img-fluid" alt="logo" style="width: 240px; height: 40px; justify-content: center; align-items: center; margin: auto;">
+    </ion-card-header>
+
+    <ion-card-content color="dark" style="font-weight: 500;">
+      The most comprehensive waste management platform
+    </ion-card-content>
+  </ion-card>
+
+<swiper-container
+  [autoplay]="{delay: 2000}" [loop]="true">
+
+<!-- BOY SELLING TRASH -->
+  <swiper-slide>
+    <ion-card style="margin: 10px; background-color: limegreen; border-radius: 8px;">
+      <ion-grid>
+        <ion-row>
+          <ion-col size="auto">
+            <img src="../../assets/main/kid-thowing.png" style="width: 150px; height: 170px;" class="img-fluid">
+          </ion-col>
+          <ion-col style="place-content: right; text-align: right;">
+            <ion-text color="dark" >
+              <span style="font-weight: 500; font-size:22px;"><b>Sell Your Trash</b></span><br>
+              <span style="font-weight: 200; font-size:20px;">Earn Some Cash</span>
+            </ion-text>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-card>
+  </swiper-slide>
+
+<!-- GREEN WORLD CARD -->
+  <swiper-slide>
+    <ion-card style="margin: 10px; background-color: rgb(178, 230, 252); border-radius: 8px;">
+      <ion-grid>
+        <ion-row>
+          <ion-col style="place-content: left; text-align: left;">
+            <ion-text class="align-bottom" color="dark">
+              <span style="font-weight: bold; font-size: 20px;">Scrap selling</span><br>
+              <span style="font-weight: bold; font-size: 20px;">made Easier</span>
+            </ion-text>
+          </ion-col>
+          <ion-col size="auto">
+            <img src="../../assets/main/greenworld.png" style="width: 210px; height: 170px; border-radius: 6px;" class="img-fluid">
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-card>
+  </swiper-slide>
+
+</swiper-container>
+
+
+  <ion-item>
+    <ion-label>Today's Scrap Rate</ion-label>
+    <ion-button color="success" slot="end" fill="outline" (click)="viewAll()"> View all </ion-button>
+  </ion-item>
+
+<!-- CARD GRIDS -->
+
+<div  class="scrap-price-list">
+  <ion-content
+    [scrollEvents]="true"
+    [scrollY]="false"
+    [scrollX]="true"
+    (ionScrollStart)="logScrollStart()"
+    (ionScroll)="logScrolling($event)"
+    (ionScrollEnd)="logScrollEnd()" scrollable>
+
+    <div>
+      <ion-card class="scrap-card" *ngFor="let item of Items">
+        <img [src]="imgBaseURL+item.imageURL" alt="Scrap_items">
+        <ion-card-title><span> {{ item.item_name }} </span></ion-card-title>
+        <ion-card-title><span> Rs. {{ item.price }} /kg</span></ion-card-title>
+      </ion-card>
+    </div>
+  </ion-content>
+
+</div>
+
+<!-- PICKUP CARD -->
+
+  <ion-card style="margin: 10px; background-color: rgb(172, 255, 172); border-radius: 8px;">
+    <ion-grid>
+      <ion-row>
+        <ion-col style="place-content: left; text-align: left;">
+          <ion-text color="dark">
+            <span style="font-weight: bold; font-size: 16px;">Request scrap pickup</span><br>
+            <span style="font-weight: 100; font-size: 16px;">Sell your household scrap online</span>
+          </ion-text>
+        </ion-col>
+        <ion-col size="auto">
+          <img src="../../assets/main/sellcard.png" style="width: 170px; height: 150px;" class="img-fluid">
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-card>
+
+<!-- SELL SCRAP BUTTON -->
+
+<ion-button color="success" expand="block" style="margin: 20px;" (click)="onSell()"> Sell Scraps </ion-button>
+
+</ion-content>
+
+
+<!-- <ion-col size="4" *ngFor="let item of Items">
+  <ion-card>
+    <ion-thumbnail>
+      <img [src]="imgBaseURL+item.imageURL" />
+    </ion-thumbnail>
+    <ion-card-subtitle class="ion-text-wrap ion-text-center" color="dark"> {{ item.item_name }} </ion-card-subtitle>
+    <ion-text class="ion-text-wrap ion-text-center" color="dark"> Rs. {{ item.price }} /kg </ion-text>
+  </ion-card>
+</ion-col> -->

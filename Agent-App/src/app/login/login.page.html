@@ -1,0 +1,36 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <h1 class="text-center" id="heading">Agent Login</h1>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <!-- <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Agent Login</ion-title>
+    </ion-toolbar>
+  </ion-header> -->
+
+  <div class="container">
+    <form>
+      <ion-input  label="Enter Email Address (Required)*" name="email" type="email"
+        color="success" label-placement="floating" fill="outline" placeholder="test@email.com" required>
+      </ion-input>
+
+      <br>
+
+      <ion-input  label="Enter Password (Required)*" name="password" maxlength="20" minlength="6" type="password"
+        #password  color="success" label-placement="floating" fill="outline" placeholder="********" required>
+      </ion-input>
+    </form>
+  </div>
+
+  <ion-button expand="block" fill="clear" (click)="onForget()"> Forget Password? </ion-button>
+
+</ion-content>
+
+<ion-footer>
+  <ion-button [disabled]="password.value ===''" color="success" expand="block" id="open-toast" (click)="onSubmit()"> Login </ion-button>
+  <ion-toast position="top" color="primary" trigger="open-toast" message="Agent LogIn Successfully"
+  [duration]="3000" icon="checkmark-circle"></ion-toast>
+</ion-footer>

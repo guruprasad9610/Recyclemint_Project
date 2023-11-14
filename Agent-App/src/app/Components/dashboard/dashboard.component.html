@@ -1,0 +1,76 @@
+<div class="container my-3">
+
+  <h3 class="text-center" style="color:green; font-weight: bold;"> Today's Orders </h3> <hr>
+
+  <ion-segment value="all" color="success">
+    <ion-segment-button value="all">
+      <ion-label> Pending </ion-label>
+    </ion-segment-button>
+
+    <ion-segment-button value="favorites">
+      <ion-label> Completed </ion-label>
+    </ion-segment-button>
+  </ion-segment>
+
+  <!-- OUT FOR PICKUP CARD -->
+  <ion-card style="border-radius: 10px;" (click)="onDetails()">
+    <ion-item>
+      <i class="fa-solid fa-truck-fast fa-lg" slot="start" style="color: var(--ion-color-warning);"></i>
+      <ion-label color="warning"> Out for pickup </ion-label>
+      <ion-icon name="caret-forward" slot="end" color="warning"></ion-icon>
+    </ion-item>
+
+    <ion-card-header>
+      <ion-card-subtitle>Order Date: 10/08/2023</ion-card-subtitle>
+      <ion-card-title> Order ID: 1234567890 </ion-card-title>
+    </ion-card-header>
+
+    <ion-card-content>
+      <b>Items : </b> Aluminium, Plastic Bottles, Iron
+    </ion-card-content>
+  </ion-card>
+
+  <!-- PICKUP CONFIRMED CARD -->
+  <ion-card style="border-radius: 10px;" (click)="onDetails()">
+    <ion-item>
+      <ion-icon name="checkmark-circle" slot="start" color="primary"></ion-icon>
+      <ion-label color="primary"> Pickup Confirmed </ion-label>
+      <ion-icon name="caret-forward" slot="end" color="primary"></ion-icon>
+    </ion-item>
+
+    <ion-card-header>
+      <ion-card-subtitle>Order Date: 10/09/2023</ion-card-subtitle>
+      <ion-card-title> Order ID: 1234567890 </ion-card-title>
+    </ion-card-header>
+
+    <ion-card-content>
+      <b>Items : </b> Aluminium, Plastic Bottles, Iron
+    </ion-card-content>
+  </ion-card>
+
+  <!-- PICKUP COMPLETED CARD -->
+  <ion-card style="border-radius: 10px;" (click)="onDetails()">
+    <ion-item>
+      <ion-icon name="bag-check" slot="start" color="success"></ion-icon>
+      <ion-label color="success"> Pickup Completed </ion-label>
+      <ion-icon name="caret-forward" slot="end" color="success"></ion-icon>
+    </ion-item>
+
+    <ion-card-header>
+      <ion-card-subtitle>Order Date: 10/09/2023</ion-card-subtitle>
+      <ion-card-title> Order ID: 1234567890 </ion-card-title>
+    </ion-card-header>
+
+    <ion-card-content>
+      <b>Items : </b> Aluminium, Plastic Bottles, Iron
+    </ion-card-content>
+  </ion-card>
+
+
+</div>
+
+<ion-fab slot="fixed" vertical="bottom" horizontal="end">
+  <ion-fab-button color="success" (click)="onLocate()">
+    <ion-icon name="location"></ion-icon>
+  </ion-fab-button>
+</ion-fab>

@@ -1,0 +1,72 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <h1 class="text-center" id="heading">Add Pickup Address</h1>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+
+  <div class="container form-group">
+    <ion-button expand="block" style="margin: 10px;" (click)="showAddress()">
+      Use my current location
+      <ion-icon name="locate" slot="start"></ion-icon>
+    </ion-button>
+      <br>
+    <ion-input label="PIN Code (Required)*" label-placement="floating" [(ngModel)]="userAddress.PIN" name="pinCode"
+      color="success" type="number" fill="outline" placeholder="Eg. 761121" required></ion-input>
+      <br>
+    <ion-input label="State (Required)*" label-placement="floating" [(ngModel)]="userAddress.state" name="stateName"
+      color="success" fill="outline" placeholder="Eg. Odisha" required></ion-input>
+      <br>
+    <ion-input label="City (Required)*" label-placement="floating" [(ngModel)]="userAddress.city" name="cityName"
+      color="success" fill="outline" placeholder="Eg. Bhubaneswar" required></ion-input>
+      <br>
+    <ion-input label="Landmark (Required)*" label-placement="floating" [(ngModel)]="userAddress.landmark" name="houseName"
+      color="success" fill="outline" placeholder="Near firestation" required></ion-input>
+      <br>
+    <ion-input label="Road Name, Area, Colony (Required)*" label-placement="floating" [(ngModel)]="userAddress.location" name="streetName"
+      color="success" fill="outline" placeholder="Eg. Paika Street" required></ion-input>
+  </div>
+
+</ion-content>
+
+<ion-footer>
+  <ion-button color="success" expand="block" style="margin: 10px;" id="open-toast" (click)="onAddress()"> Save Address </ion-button>
+  <ion-toast position="top" color="primary" trigger="open-toast" message="Address saved successfully."
+  [duration]="3000" icon="checkmark-circle"></ion-toast>
+
+  <ion-button fill="clear" expand="block" style="margin: 10px;" (click)="onSkip()"> Skip </ion-button>
+</ion-footer>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <ion-select label="Select State" label-placement="floating" fill="outline" color="success"
+(ionChange)="handleChange($event)"
+(ionCancel)="handleCancel()"
+(ionDismiss)="handleDismiss()">
+  <ion-select-option value="Odisha">Odisha</ion-select-option>
+  <ion-select-option value="Bihar">Bihar</ion-select-option>
+  <ion-select-option value="West Bengal">West Bengal</ion-select-option>
+</ion-select> -->

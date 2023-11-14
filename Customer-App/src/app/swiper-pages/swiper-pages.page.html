@@ -1,0 +1,37 @@
+<ion-content [fullscreen]="true">
+
+<swiper-container
+[pagination]="{dynamicBullets: true}">
+
+  <swiper-slide>
+    <img src="../../assets/main/1_slide.jpg" alt="1-slide"
+      style="height: 60%; width: 100%;">
+      <img src="../../assets/main/swipe-left.gif" alt="swipe-animation" style="height: 75px; width: 75px;"/>
+      <h6 class="text text-success"><b>Swipe Next </b> <i class="fa-solid fa-arrow-right-long"></i></h6>
+      <!-- <ion-button fill="clear">
+        <h5>Swipe Next</h5>
+        <ion-icon color="dark" slot="end" name="arrow-forward-outline"></ion-icon>
+      </ion-button> -->
+  </swiper-slide>
+
+  <swiper-slide>
+    <img src="../../assets/main/2_slide.jpg" alt="2-slide"
+      style="height: 60%; width: 100%;">
+      <h6 class="text text-success"><b>Swipe Next </b> <i class="fa-solid fa-arrow-right-long"></i></h6>
+  </swiper-slide>
+
+  <swiper-slide>
+    <img src="../../assets/main/3_slide.jpg" alt="3-slide"
+      style="height: 60%; width: 100%;">
+    <h6 class="text text-success"><b>Swipe Next </b> <i class="fa-solid fa-arrow-right-long"></i></h6>
+  </swiper-slide>
+
+  <swiper-slide>
+    <img src="../../assets/main/4_slide.jpg" alt="4-slide"
+      style="height: 60%; width: 100%;">
+      <br> <br> <br>
+      <ion-button color="success" expand="block" (click)="onSubmit()"> Continue </ion-button>
+  </swiper-slide>
+</swiper-container>
+
+</ion-content>
